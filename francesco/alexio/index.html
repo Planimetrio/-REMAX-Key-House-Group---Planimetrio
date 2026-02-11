@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Alexio Marzocchi | RE/MAX</title>
+  <meta name="description" content="Biglietto da visita digitale - Alexio Marzocchi, RE/MAX Key House Group - Planimetrio" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:title" content="Alexio Marzocchi | RE/MAX" />
+  <meta property="og:description" content="Team leader - Team Planimetrio" />
+  <meta property="og:url" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/alexio/" />
+  <link rel="canonical" href="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/alexio/" />
+
+  <style>
+    :root{
+      --remax-blue:#003DA5;
+      --remax-red:#DC1C2E;
+
+      --bg:#F6F7FB;
+      --card:#FFFFFF;
+      --text:#0B1220;
+      --muted:#5B667A;
+      --line:#E6E8EE;
+
+      --shadow: 0 18px 45px rgba(11,18,32,.10);
+      --shadow2: 0 14px 28px rgba(11,18,32,.10);
+      --radius:24px;
+
+      --focus: rgba(0,61,165,.18);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0}
+
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 260px at 50% -140px, rgba(0,61,165,.18), transparent 65%),
+        radial-gradient(900px 260px at 50% 40px, rgba(220,28,46,.12), transparent 65%),
+        var(--bg);
+      padding:22px 14px calc(108px + env(safe-area-inset-bottom));
+    }
+
+    .wrap{max-width:620px;margin:0 auto}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      padding:18px 18px 10px;
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1));
+      border-bottom:1px solid var(--line);
+    }
+    .logo{
+      height:clamp(28px, 5vw, 38px);
+      width:auto;
+      display:block;
+    }
+
+    .hero{
+      position:relative;
+      padding:18px 18px 22px;
+      text-align:center;
+      background:#fff;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)),
+        url("./hero-bg.jpg") center / cover no-repeat;
+      filter: grayscale(100%) contrast(.92) brightness(1.05);
+      z-index:0;
+    }
+    .hero > *{position:relative; z-index:1;}
+
+    .avatar{
+      width:164px;height:164px;border-radius:999px;
+      margin:8px auto 14px;
+      object-fit:cover;
+      background:#EEF2F7;
+      display:block;
+      border:7px solid rgba(255,255,255,.96);
+      box-shadow: 0 22px 44px rgba(11,18,32,.18);
+      outline: 1px solid rgba(0,61,165,.10);
+    }
+
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.03em;
+      line-height:1.12;
+    }
+    .role{
+      margin:8px 0 0;
+      font-weight:900;
+      color:var(--remax-blue);
+    }
+
+    .actions{
+      padding:14px 18px 18px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      border-radius:16px;
+      padding:14px 14px;
+      font-weight:900;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      box-shadow: 0 1px 0 rgba(11,18,32,.03);
+      transition: transform .08s ease, box-shadow .18s ease, border-color .18s ease;
+      min-width:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .btn:hover{box-shadow:var(--shadow2); transform:translateY(-1px); border-color: rgba(0,61,165,.18)}
+    .btn.primary{
+      background:var(--remax-red);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 16px 30px rgba(220,28,46,.24);
+    }
+    .btn.secondary{
+      border-color: rgba(0,61,165,.22);
+      color: var(--remax-blue);
+      background:#fff;
+    }
+
+    @media (min-width:560px){
+      .actions{grid-template-columns:1fr 1fr}
+      .actions .btn:last-child{grid-column:1 / -1}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <div class="logo-wrap">
+        <img class="logo" src="./remax-logo.jpg" alt="RE/MAX">
+      </div>
+
+      <div class="hero">
+        <img class="avatar" src="./Alexio Marzocchi.png" alt="Foto profilo">
+
+        <h1>Alexio Marzocchi</h1>
+        <div class="role">RE/MAX Key House Group · Planimetrio</div>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="tel:+393385784897">Chiama</a>
+        <a class="btn secondary" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn" href="./alexio-marzocchi.vcf" download>Salva contatto</a>
+      </div>
+
+      <div class="actions" style="border-top:none; padding-top:0;">
+        <a class="btn" href="mailto:alexio.marzocchi@remax.it">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/alexio-marzocchi-3319842b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
