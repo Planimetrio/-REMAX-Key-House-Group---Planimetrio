@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Giampaolo\;Emanuele\;\;\;
+FN:Emanuele Giampaolo
+ORG:REMAX Key House Group - Planimetrio
+TITLE:Team member - Team Planimetrio\; Assistente
+TEL;TYPE=CELL:+39 392 551 3429
+EMAIL;TYPE=INTERNET,WORK:emanuele.giampaolo@remax.it
+ADR;TYPE=WORK:\;\;Viale Francesco Caltagirone 436\;Roma\;\;00132\;Italia
+ADR;TYPE=WORK:\;\;Via Giovanni Nicotera 31\;Roma\;\;00195\;Italia
+ADR;TYPE=WORK:\;\;Piazza dei Mirti 27\;Roma\;\;00172\;Italia
+NOTE:Instagram: Planimetrio | Facebook: Planimetrio | TikTok: Planimetrio
+X-SOCIALPROFILE;TYPE=instagram:Planimetrio
+X-SOCIALPROFILE;TYPE=facebook:Planimetrio
+X-SOCIALPROFILE;TYPE=tiktok:Planimetrio
+REV:20260210T233242Z
+END:VCARD
