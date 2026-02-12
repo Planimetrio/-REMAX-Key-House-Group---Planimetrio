@@ -228,15 +228,17 @@
       text-decoration:none;
       box-shadow: 0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
-    }
-    .soc svg{
+   /* Social icons: default = filled */
+.soc svg{
   width:22px;
   height:22px;
   display:block;
 }
-.soc svg path{
-  fill:#fff;
-}
+
+/* Default: tutte le icone piene bianche */
+.soc svg path{ fill:#fff; }
+
+/* Instagram: icona outline (stroke), NON fill */
 .soc svg.ig path{
   fill:none;
   stroke:#fff;
