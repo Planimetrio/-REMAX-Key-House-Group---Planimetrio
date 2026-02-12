@@ -236,11 +236,19 @@
       border:1px solid rgba(0,0,0,.08);
     }
     .soc svg{
-      width:22px;
-      height:22px;
-      fill:#fff;
-      display:block;
-    }
+  width:22px;
+  height:22px;
+  display:block;
+}
+.soc svg path{ fill:#fff; }
+.soc svg.ig path{
+  fill:none;
+  stroke:#fff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
     /* FIX: Instagram icon outline (evita quadrato) */
     .soc svg.ig{
       fill:none;
