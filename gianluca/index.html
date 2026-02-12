@@ -232,11 +232,20 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
     }
-    .soc svg{
-      width:22px;
-      height:22px;
-      fill:#fff;
-      display:block;
+   .soc svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+.soc svg path{ fill:#fff; }
+.soc svg.ig path{
+  fill:none;
+  stroke:#fff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
     }
     /* FIX: Instagram icon outline (evita quadrato) */
     .soc svg.ig{
@@ -468,7 +477,7 @@
         <div class="social-row">
 
           <a class="soc" href="https://www.facebook.com/share/1CD4kNnesM/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 8.5H16V6h-1.5C12.6 6 11.5 7.2 11.5 9v2H10v2.7h1.5V21h2.8v-7.3H16l.4-2.7h-2.1V9.3c0-.5.3-.8.8-.8z"/>
             </svg>
           </a>
