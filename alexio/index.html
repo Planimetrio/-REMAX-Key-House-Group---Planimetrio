@@ -356,6 +356,7 @@
         <img class="avatar" src="./Alexio Marzocchi.png" alt="Foto profilo Alexio Marzocchi">
         <h1>Alexio Marzocchi</h1>
         <div class="role">Team leader – RE/MAX Key House Group · Planimetrio</div>
+
         <!-- Riga uguale per tutti (non ripete RE/MAX) -->
         <div class="sub">Consulenza e vendita immobiliare</div>
       </div>
@@ -369,7 +370,7 @@
           Chiama
         </a>
 
-        <a class="btn secondary" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
+        <a class="btn secondary" href="https://wa.me/393385784897" rel="noopener noreferrer">
           <!-- ✅ WhatsApp FILLED (leggibile ovunque) -->
           <svg class="wa-fill" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor" d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.45 3.42 1.3 4.9L2 22l5.33-1.4a9.86 9.86 0 0 0 4.71 1.2h.01c5.47 0 9.9-4.44 9.9-9.9C21.95 6.44 17.51 2 12.04 2zm5.76 14.3c-.24.68-1.4 1.3-1.92 1.38-.48.07-1.1.1-1.78-.11-.41-.13-.93-.3-1.6-.6-2.82-1.22-4.66-4.1-4.8-4.29-.13-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.05.98-2.33.25-.28.56-.35.74-.35h.54c.17 0 .4-.03.62.47.24.58.81 2 .88 2.14.07.15.11.32.02.51-.08.19-.13.32-.26.49-.13.17-.27.38-.39.5-.13.13-.26.27-.11.52.15.25.68 1.12 1.46 1.81 1 .88 1.84 1.15 2.1 1.28.26.13.41.11.56-.06.15-.17.64-.74.81-1 .17-.26.34-.21.57-.13.24.08 1.5.71 1.75.84.26.13.43.19.49.3.06.11.06.64-.18 1.32z"/>
@@ -505,9 +506,13 @@
             </svg>
           </a>
 
-          <!-- ✅ Instagram: link pulito + gestione JS (desktop nuova scheda, android/in-app stessa scheda) -->
-          <a class="soc iglink" href="https://www.instagram.com/planimetrio/"
-             rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Instagram">
+          <!-- ✅ Instagram: FIX DEFINITIVO (deep link + fallback web) -->
+          <a class="soc ig-open"
+             href="https://www.instagram.com/planimetrio/"
+             rel="noopener noreferrer"
+             referrerpolicy="no-referrer"
+             aria-label="Instagram"
+             data-ig="planimetrio">
             <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5"></rect>
               <circle cx="12" cy="12" r="4"></circle>
@@ -545,7 +550,7 @@
         <span class="lbl">Chiama</span>
       </a>
 
-      <a class="sbtn" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
+      <a class="sbtn" href="https://wa.me/393385784897" rel="noopener noreferrer">
         <svg class="wa-fill" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="currentColor" d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.45 3.42 1.3 4.9L2 22l5.33-1.4a9.86 9.86 0 0 0 4.71 1.2h.01c5.47 0 9.9-4.44 9.9-9.9C21.95 6.44 17.51 2 12.04 2zm5.76 14.3c-.24.68-1.4 1.3-1.92 1.38-.48.07-1.1.1-1.78-.11-.41-.13-.93-.3-1.6-.6-2.82-1.22-4.66-4.1-4.8-4.29-.13-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.05.98-2.33.25-.28.56-.35.74-.35h.54c.17 0 .4-.03.62.47.24.58.81 2 .88 2.14.07.15.11.32.02.51-.08.19-.13.32-.26.49-.13.17-.27.38-.39.5-.13.13-.26.27-.11.52.15.25.68 1.12 1.46 1.81 1 .88 1.84 1.15 2.1 1.28.26.13.41.11.56-.06.15-.17.64-.74.81-1 .17-.26.34-.21.57-.13.24.08 1.5.71 1.75.84.26.13.43.19.49.3.06.11.06.64-.18 1.32z"/>
         </svg>
@@ -564,21 +569,43 @@
     </div>
   </div>
 
-  <!-- ✅ Instagram: desktop nuova scheda, android/in-app stessa scheda -->
+  <!-- ✅ Instagram FIX DEFINITIVO: deep link (app) + fallback web -->
   <script>
   (function(){
-    var a = document.querySelector('.iglink');
+    var a = document.querySelector('.ig-open');
     if(!a) return;
 
-    var isAndroid = /Android/i.test(navigator.userAgent);
-    var isInApp = /FBAN|FBAV|Instagram|Line|wv/i.test(navigator.userAgent);
+    var user = a.getAttribute('data-ig') || 'planimetrio';
+    var web  = 'https://www.instagram.com/' + user + '/';
+
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
 
     a.addEventListener('click', function(e){
-      if(!isAndroid && !isInApp){
-        e.preventDefault();
-        window.open(a.href, '_blank', 'noopener');
+      e.preventDefault();
+
+      // iOS: prova ad aprire app Instagram, poi fallback web
+      if(isIOS){
+        var ios = 'instagram://user?username=' + encodeURIComponent(user);
+        var t1 = setTimeout(function(){ window.location.href = web; }, 700);
+        window.location.href = ios;
+        window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
+        return;
       }
-      // su Android/in-app: stessa scheda (più affidabile)
+
+      // Android: prova intent, poi fallback web
+      if(isAndroid){
+        var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
+          '/#Intent;package=com.instagram.android;scheme=https;end';
+        var t2 = setTimeout(function(){ window.location.href = web; }, 700);
+        window.location.href = intent;
+        window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
+        return;
+      }
+
+      // Desktop/altro: web diretto
+      window.location.href = web;
     });
   })();
   </script>
