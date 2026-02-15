@@ -3,16 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Emanuele Giampaolo | RE/MAX</title>
-  <meta name="description" content="Biglietto da visita digitale - Emanuele Giampaolo, RE/MAX Key House Group - Planimetrio" />
 
-  <!-- Preview social (consigliato) -->
+  <title>Emanuele Giampaolo | RE/MAX</title>
+  <meta name="description" content="Biglietto da visita digitale - Emanuele Giampaolo, RE/MAX Key House Group · Planimetrio" />
+  <link rel="canonical" href="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/emanuele/" />
+
+  <!-- Social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:title" content="Emanuele Giampaolo | RE/MAX" />
-<meta property="og:description" content="Team member – RE/MAX Key House Group · Team Planimetrio" />
+  <meta property="og:description" content="RE/MAX Key House Group · Planimetrio" />
   <meta property="og:url" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/emanuele/" />
-  <link rel="canonical" href="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/emanuele/" />
+  <meta property="og:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/emanuele/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emanuele Giampaolo | RE/MAX" />
+  <meta name="twitter:description" content="RE/MAX Key House Group · Planimetrio" />
+  <meta name="twitter:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/emanuele/og.jpg" />
+
+  <meta name="theme-color" content="#003DA5" />
 
   <style>
     :root{
@@ -54,7 +65,6 @@
       overflow:hidden;
     }
 
-    /* Logo */
     .logo-wrap{
       display:flex;
       justify-content:center;
@@ -62,12 +72,8 @@
       background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1));
       border-bottom:1px solid var(--line);
     }
-    .logo{
-  height:clamp(34px, 6vw, 48px);
-  width:auto;
-}
+    .logo{height:42px;width:auto;display:block;}
 
-    /* Hero */
     .hero{
       position:relative;
       padding:18px 18px 22px;
@@ -88,13 +94,15 @@
     .hero > *{position:relative; z-index:1;}
 
     .avatar{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid #fff;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
+      width:164px;height:164px;border-radius:999px;
+      margin:8px auto 14px;
+      object-fit:cover;
+      background:#EEF2F7;
+      display:block;
+      border:7px solid rgba(255,255,255,.96);
+      box-shadow:0 22px 44px rgba(11,18,32,.18);
+      outline:1px solid rgba(0,61,165,.10);
+    }
 
     h1{
       margin:0;
@@ -115,7 +123,6 @@
       line-height:1.55;
     }
 
-    /* Buttons */
     .actions{
       padding:14px 18px 18px;
       display:grid;
@@ -137,7 +144,7 @@
       border:1px solid var(--line);
       background:#fff;
       color:var(--text);
-      box-shadow: 0 1px 0 rgba(11,18,32,.03);
+      box-shadow:0 1px 0 rgba(11,18,32,.03);
       transition: transform .08s ease, box-shadow .18s ease, border-color .18s ease;
       min-width:0;
       white-space:nowrap;
@@ -145,7 +152,7 @@
       text-overflow:ellipsis;
     }
     .btn:hover{box-shadow:var(--shadow2); transform:translateY(-1px); border-color: rgba(0,61,165,.18)}
-    .btn:active{transform:translateY(0px); box-shadow: 0 8px 18px rgba(11,18,32,.10)}
+    .btn:active{transform:translateY(0px); box-shadow:0 8px 18px rgba(11,18,32,.10)}
     .btn:focus{outline:3px solid var(--focus); outline-offset:2px}
 
     .btn.primary{
@@ -160,7 +167,6 @@
       background:#fff;
     }
 
-    /* Sections */
     .section{
       border-top:1px solid var(--line);
       padding:18px;
@@ -192,8 +198,8 @@
       min-width:0;
     }
     .tile:hover{
-      box-shadow: var(--shadow2);
-      transform: translateY(-1px);
+      box-shadow:var(--shadow2);
+      transform:translateY(-1px);
       border-color: rgba(0,61,165,.16);
     }
 
@@ -202,22 +208,34 @@
     .tile a{color:inherit;text-decoration:none}
     .tile a:hover{text-decoration:underline}
 
-    /* Inline icons (mono) */
+    /* Icone lineari */
     .i{
-  width:20px;
-  height:20px;
-  stroke:var(--remax-blue);
-  stroke-width:2;
-  fill:none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex:0 0 auto;
-  margin-top:2px;
-}
+      width:20px;
+      height:20px;
+      stroke: var(--remax-blue);
+      stroke-width:2;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      flex:0 0 auto;
+      display:block;
+      margin-top:2px;
+    }
+    .btn.primary .i,
+    .sbtn.primary .i{ stroke:#fff; }
 
-    .i.white{stroke:#fff}
+    /* WhatsApp FILLED */
+    .wa-fill{
+      width:20px;
+      height:20px;
+      flex:0 0 auto;
+      display:block;
+      color: var(--remax-blue);
+    }
+    .btn.primary .wa-fill,
+    .sbtn.primary .wa-fill{ color:#fff; }
 
-    /* Social round icons – ALWAYS 4 in one row */
+    /* Social */
     .social-row{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -233,39 +251,27 @@
       align-items:center;
       justify-content:center;
       text-decoration:none;
-      box-shadow: 0 10px 22px rgba(0,0,0,.12);
+      box-shadow:0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
     }
-    .soc svg{
-  width:22px;
-  height:22px;
-  display:block;
-}
-.soc svg path{
-  fill:#fff;
-}
-.soc svg.ig path{
-  fill:none;
-  stroke:#fff;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-    /* FIX: Instagram icon outline (evita quadrato) */
+    .soc svg{width:22px;height:22px;display:block;}
+    .soc svg path{ fill:#fff; }
+
     .soc svg.ig{
-      fill:none;
-      stroke:#fff;
+      fill:none !important;
+      stroke:#fff !important;
       stroke-width:2;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
+    .soc svg.ig *{ fill:none !important; }
 
     @media (max-width:360px){
       .soc{height:44px}
       .soc svg{width:20px;height:20px}
     }
 
-    /* Sticky bar (Android-safe) */
+    /* Sticky bar */
     .sticky{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -294,7 +300,7 @@
       color:var(--text);
       font-weight:900;
       text-decoration:none;
-      box-shadow: 0 8px 18px rgba(11,18,32,.08);
+      box-shadow:0 8px 18px rgba(11,18,32,.08);
       min-width:0;
       white-space:nowrap;
       overflow:hidden;
@@ -336,36 +342,32 @@
       </div>
 
       <div class="hero">
-        <img class="avatar" src="./emanuele-giampaolo.jpg" alt="Emanuele Giampaolo">
-
+        <img class="avatar" src="./emanuele-giampaolo.jpg" alt="Foto profilo Emanuele Giampaolo">
         <h1>Emanuele Giampaolo</h1>
         <div class="role">Team member – RE/MAX Key House Group · Planimetrio</div>
-
-        <div class="sub">
-          RE/MAX Key House Group · Planimetrio
-        </div>
+        <div class="sub">Consulenza e vendita immobiliare</div>
       </div>
 
       <div class="actions">
+
         <a class="btn primary" href="tel:+393925513429">
-          <svg class="i white" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
           Chiama
         </a>
 
-        <a class="btn secondary" href="https://wa.me/393925513429" target="_blank" rel="noopener noreferrer">
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="5" y="2" width="14" height="20" rx="2"/>
-            <path d="M12 18h.01"/>
+        <a class="btn secondary" href="https://wa.me/393925513429" rel="noopener noreferrer">
+          <svg class="wa-fill" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.45 3.42 1.3 4.9L2 22l5.33-1.4a9.86 9.86 0 0 0 4.71 1.2h.01c5.47 0 9.9-4.44 9.9-9.9C21.95 6.44 17.51 2 12.04 2zm5.76 14.3c-.24.68-1.4 1.3-1.92 1.38-.48.07-1.1.1-1.78-.11-.41-.13-.93-.3-1.6-.6-2.82-1.22-4.66-4.1-4.8-4.29-.13-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.05.98-2.33.25-.28.56-.35.74-.35h.54c.17 0 .4-.03.62.47.24.58.81 2 .88 2.14.07.15.11.32.02.51-.08.19-.13.32-.26.49-.13.17-.27.38-.39.5-.13.13-.26.27-.11.52.15.25.68 1.12 1.46 1.81 1 .88 1.84 1.15 2.1 1.28.26.13.41.11.56-.06.15-.17.64-.74.81-1 .17-.26.34-.21.57-.13.24.08 1.5.71 1.75.84.26.13.43.19.49.3.06.11.06.64-.18 1.32z"/>
           </svg>
           WhatsApp
         </a>
 
-        <a class="btn" href="mailto:emanuele.giampaolo@remax.it">
+        <a class="btn" href="mailto:emanuele.giampaolo@remax.it?subject=Richiesta%20informazioni">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 4h16v16H4z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <rect x="4" y="6" width="16" height="12" rx="2"/>
+            <path d="M4 8l8 6 8-6"/>
           </svg>
           Email
         </a>
@@ -378,6 +380,10 @@
           </svg>
           Salva contatto
         </a>
+
+        <div class="small" style="text-align:center;margin-top:-2px">
+          <a href="./emanuele-giampaolo.vcf">Se non scarica, tocca qui per aprire il contatto</a>
+        </div>
       </div>
 
       <div class="section">
@@ -396,12 +402,12 @@
 
           <div class="tile">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 4h16v16H4z"/>
-              <polyline points="22,6 12,13 2,6"/>
+              <rect x="4" y="6" width="16" height="12" rx="2"/>
+              <path d="M4 8l8 6 8-6"/>
             </svg>
             <div>
               <b>Email</b>
-              <div class="small"><a href="mailto:emanuele.giampaolo@remax.it">emanuele.giampaolo@remax.it</a></div>
+              <div class="small"><a href="mailto:emanuele.giampaolo@remax.it?subject=Richiesta%20informazioni">emanuele.giampaolo@remax.it</a></div>
             </div>
           </div>
 
@@ -413,7 +419,9 @@
             </svg>
             <div>
               <b>Sito</b>
-              <div class="small"><a href="https://keyhousegroup.it" target="_blank" rel="noopener noreferrer">keyhousegroup.it</a></div>
+              <div class="small">
+                <a href="https://keyhousegroup.it" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">keyhousegroup.it</a>
+              </div>
             </div>
           </div>
 
@@ -433,9 +441,8 @@
               <b>Viale Francesco Caltagirone 436</b>
               <div class="small">00132 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma" target="_blank" rel="noopener noreferrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -449,9 +456,8 @@
               <b>Via Giovanni Nicotera 31</b>
               <div class="small">00195 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma" target="_blank" rel="noopener noreferrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -465,9 +471,8 @@
               <b>Piazza dei Mirti 27</b>
               <div class="small">00172 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma" target="_blank" rel="noopener noreferrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -480,31 +485,37 @@
 
         <div class="social-row">
 
-          <a class="soc" href="https://www.facebook.com/share/1CD4kNnesM/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a class="soc" href="https://www.facebook.com/share/1CD4kNnesM/"
+             target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 8.5H16V6h-1.5C12.6 6 11.5 7.2 11.5 9v2H10v2.7h1.5V21h2.8v-7.3H16l.4-2.7h-2.1V9.3c0-.5.3-.8.8-.8z"/>
             </svg>
           </a>
 
-          <a class="soc"
-             href="https://www.instagram.com/planimetrio/?utm_source=qr"
-             target="_blank"
+          <!-- Instagram: deep link + fallback web -->
+          <a class="soc ig-open"
+             href="https://www.instagram.com/planimetrio/"
              rel="noopener noreferrer"
              referrerpolicy="no-referrer"
-             aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6A5.2 5.2 0 0 1 16.8 22H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2zm9.9 3.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7.4A4.6 4.6 0 1 0 12 16.6 4.6 4.6 0 0 0 12 7.4zm0 2.2A2.4 2.4 0 1 1 12 14.4 2.4 2.4 0 0 1 12 9.6z"/>
+             aria-label="Instagram"
+             data-ig="planimetrio">
+            <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
             </svg>
           </a>
 
-          <a class="soc" href="https://www.tiktok.com/@planimetrio" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <a class="soc" href="https://www.tiktok.com/@planimetrio"
+             target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="TikTok">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M16.5 3c1.2 1.7 2.9 2.9 4.9 3v3.1c-1.9-.1-3.7-.8-5.2-1.9v6.2a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 1.9 2.6V3h3.2z"/>
             </svg>
           </a>
 
-          <!-- LinkedIn: non mi hai dato il profilo di Emanuele, quindi metto una ricerca LinkedIn già pronta -->
-          <a class="soc" href="https://www.linkedin.com/search/results/all/?keywords=Emanuele%20Giampaolo%20RE%2FMAX" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <!-- LinkedIn: non abbiamo URL profilo -> ricerca pronta -->
+          <a class="soc" href="https://www.linkedin.com/search/results/all/?keywords=Emanuele%20Giampaolo%20RE%2FMAX"
+             target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6.5 6.5A1.5 1.5 0 1 1 6.5 3a1.5 1.5 0 0 1 0 3.5zM5 8h3v11H5V8zm5 0h2.9v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V19h-3v-5.4c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V19h-3V8z"/>
             </svg>
@@ -516,20 +527,19 @@
     </div>
   </div>
 
-  <!-- Sticky conversion bar -->
   <div class="sticky" aria-label="Azioni rapide">
     <div class="inner">
+
       <a class="sbtn primary" href="tel:+393925513429">
-        <svg class="i white" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
         <span class="lbl">Chiama</span>
       </a>
 
-      <a class="sbtn" href="https://wa.me/393925513429" target="_blank" rel="noopener noreferrer">
-        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="5" y="2" width="14" height="20" rx="2"/>
-          <path d="M12 18h.01"/>
+      <a class="sbtn" href="https://wa.me/393925513429" rel="noopener noreferrer">
+        <svg class="wa-fill" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.45 3.42 1.3 4.9L2 22l5.33-1.4a9.86 9.86 0 0 0 4.71 1.2h.01c5.47 0 9.9-4.44 9.9-9.9C21.95 6.44 17.51 2 12.04 2zm5.76 14.3c-.24.68-1.4 1.3-1.92 1.38-.48.07-1.1.1-1.78-.11-.41-.13-.93-.3-1.6-.6-2.82-1.22-4.66-4.1-4.8-4.29-.13-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.05.98-2.33.25-.28.56-.35.74-.35h.54c.17 0 .4-.03.62.47.24.58.81 2 .88 2.14.07.15.11.32.02.51-.08.19-.13.32-.26.49-.13.17-.27.38-.39.5-.13.13-.26.27-.11.52.15.25.68 1.12 1.46 1.81 1 .88 1.84 1.15 2.1 1.28.26.13.41.11.56-.06.15-.17.64-.74.81-1 .17-.26.34-.21.57-.13.24.08 1.5.71 1.75.84.26.13.43.19.49.3.06.11.06.64-.18 1.32z"/>
         </svg>
         <span class="lbl">WhatsApp</span>
       </a>
@@ -542,7 +552,46 @@
         </svg>
         <span class="lbl">Contatto</span>
       </a>
+
     </div>
   </div>
+
+  <!-- Instagram FIX: deep link (app) + fallback web -->
+  <script>
+  (function(){
+    var a = document.querySelector('.ig-open');
+    if(!a) return;
+
+    var user = a.getAttribute('data-ig') || 'planimetrio';
+    var web  = 'https://www.instagram.com/' + user + '/';
+
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+
+      if(isIOS){
+        var ios = 'instagram://user?username=' + encodeURIComponent(user);
+        var t1 = setTimeout(function(){ window.location.href = web; }, 700);
+        window.location.href = ios;
+        window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
+        return;
+      }
+
+      if(isAndroid){
+        var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
+          '/#Intent;package=com.instagram.android;scheme=https;end';
+        var t2 = setTimeout(function(){ window.location.href = web; }, 700);
+        window.location.href = intent;
+        window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
+        return;
+      }
+
+      window.location.href = web;
+    });
+  })();
+  </script>
 </body>
 </html>
