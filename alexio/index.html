@@ -252,17 +252,21 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
     }
-    .soc svg{width:22px;height:22px;display:block}
-    .soc svg path{fill:#fff}
+    .soc svg{ width:22px; height:22px; display:block; }
 
-    /* Instagram outline pulito */
-    .soc svg.ig{
-      fill:none;
-      stroke:#fff;
-      stroke-width:2;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
+/* default: icone social piene bianche (FB, TikTok, LinkedIn) */
+.soc svg path{ fill:#fff; }
+
+/* Instagram: outline bianco */
+.soc svg.ig{
+  fill:none !important;
+  stroke:#fff !important;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.soc svg.ig *{ fill:none !important; }
+
 
     @media (max-width:360px){
       .soc{height:44px}
