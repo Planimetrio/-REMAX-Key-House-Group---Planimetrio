@@ -14,6 +14,7 @@
   <meta property="og:title" content="Alexio Marzocchi | RE/MAX" />
   <meta property="og:description" content="RE/MAX Key House Group · Planimetrio" />
   <meta property="og:url" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/Alessio/" />
+  <!-- Metti un'immagine 1200x630 chiamata og.jpg nella cartella di Alexio -->
   <meta property="og:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/Alessio/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -72,7 +73,7 @@
       background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1));
       border-bottom:1px solid var(--line);
     }
-    /* logo stabile */
+    /* Logo stabile */
     .logo{height:42px;width:auto;display:block;}
 
     .hero{
@@ -117,7 +118,7 @@
       color:var(--remax-blue);
     }
 
-    /* riga uguale per tutti, non ripete RE/MAX */
+    /* Riga uguale per tutti (no ripetizione RE/MAX) */
     .sub{
       margin:12px auto 0;
       max-width:520px;
@@ -211,7 +212,7 @@
     .tile a{color:inherit;text-decoration:none}
     .tile a:hover{text-decoration:underline}
 
-    /* ✅ FIX DEFINITIVO ICONE BOTTONI/TILE: non dipendono dal testo, mai grigie, mai piene */
+    /* ✅ ICONE BOTTONI/TILE blindate */
     .i{
       width:20px;
       height:20px;
@@ -226,6 +227,15 @@
     }
     .btn.primary .i,
     .sbtn.primary .i{
+      stroke:#fff !important;
+    }
+
+    /* ✅ WhatsApp nei bottoni: blindato contro qualunque fill globale */
+    .wa, .wa *{
+      fill:none !important;
+    }
+    .btn.primary .wa,
+    .sbtn.primary .wa{
       stroke:#fff !important;
     }
 
@@ -248,12 +258,16 @@
       box-shadow:0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
     }
-    .soc svg{width:22px;height:22px;display:block;}
+    .soc svg{
+      width:22px;
+      height:22px;
+      display:block;
+    }
 
-    /* default: social piene bianche (FB, TikTok, LinkedIn) */
-    .soc svg path{fill:#fff;}
+    /* Social piene bianche (Facebook, TikTok, LinkedIn) */
+    .soc svg path{ fill:#fff; }
 
-    /* ✅ Instagram outline pulito (blindato) */
+    /* Instagram outline */
     .soc svg.ig{
       fill:none !important;
       stroke:#fff !important;
@@ -261,7 +275,7 @@
       stroke-linecap:round;
       stroke-linejoin:round;
     }
-    .soc svg.ig *{fill:none !important;}
+    .soc svg.ig *{ fill:none !important; }
 
     @media (max-width:360px){
       .soc{height:44px}
@@ -355,16 +369,15 @@
         </a>
 
         <a class="btn secondary" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
-          <!-- WhatsApp outline corporate -->
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
-            <path d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
+          <!-- ✅ WhatsApp OUTLINE blindato -->
+          <svg class="i wa" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="none" d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
+            <path fill="none" d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
           </svg>
           WhatsApp
         </a>
 
         <a class="btn" href="mailto:alexio.marzocchi@remax.it?subject=Richiesta%20informazioni">
-          <!-- Email outline corporate -->
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <rect x="4" y="6" width="16" height="12" rx="2"/>
             <path d="M4 8l8 6 8-6"/>
@@ -419,7 +432,9 @@
             </svg>
             <div>
               <b>Sito</b>
-              <div class="small"><a href="https://keyhousegroup.it" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">keyhousegroup.it</a></div>
+              <div class="small">
+                <a href="https://keyhousegroup.it" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">keyhousegroup.it</a>
+              </div>
             </div>
           </div>
 
@@ -439,9 +454,8 @@
               <b>Viale Francesco Caltagirone 436</b>
               <div class="small">00132 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -455,9 +469,8 @@
               <b>Via Giovanni Nicotera 31</b>
               <div class="small">00195 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -471,9 +484,8 @@
               <b>Piazza dei Mirti 27</b>
               <div class="small">00172 · Roma</div>
               <div class="small">
-                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
-                  Apri su Google Maps
-                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma"
+                   target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
             </div>
           </div>
@@ -486,13 +498,15 @@
 
         <div class="social-row">
 
-          <a class="soc" href="https://www.facebook.com/share/1CD4kNnesM/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Facebook">
+          <a class="soc" href="https://www.facebook.com/share/1CD4kNnesM/" target="_blank"
+             rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 8.5H16V6h-1.5C12.6 6 11.5 7.2 11.5 9v2H10v2.7h1.5V21h2.8v-7.3H16l.4-2.7h-2.1V9.3c0-.5.3-.8.8-.8z"/>
             </svg>
           </a>
 
-          <a class="soc" href="https://www.instagram.com/planimetrio/?utm_source=qr" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Instagram">
+          <a class="soc" href="https://www.instagram.com/planimetrio/?utm_source=qr" target="_blank"
+             rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Instagram">
             <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5"></rect>
               <circle cx="12" cy="12" r="4"></circle>
@@ -500,13 +514,15 @@
             </svg>
           </a>
 
-          <a class="soc" href="https://www.tiktok.com/@planimetrio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="TikTok">
+          <a class="soc" href="https://www.tiktok.com/@planimetrio" target="_blank"
+             rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="TikTok">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M16.5 3c1.2 1.7 2.9 2.9 4.9 3v3.1c-1.9-.1-3.7-.8-5.2-1.9v6.2a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 1.9 2.6V3h3.2z"/>
             </svg>
           </a>
 
-          <a class="soc" href="https://www.linkedin.com/in/alexio-marzocchi-3319842b1/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="LinkedIn">
+          <a class="soc" href="https://www.linkedin.com/in/alexio-marzocchi-3319842b1/" target="_blank"
+             rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6.5 6.5A1.5 1.5 0 1 1 6.5 3a1.5 1.5 0 0 1 0 3.5zM5 8h3v11H5V8zm5 0h2.9v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V19h-3v-5.4c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V19h-3V8z"/>
             </svg>
@@ -529,9 +545,9 @@
       </a>
 
       <a class="sbtn" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
-        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
-          <path d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
+        <svg class="i wa" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
+          <path fill="none" d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
         </svg>
         <span class="lbl">WhatsApp</span>
       </a>
