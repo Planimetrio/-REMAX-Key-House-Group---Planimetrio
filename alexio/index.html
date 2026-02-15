@@ -74,7 +74,8 @@
       background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1));
       border-bottom:1px solid var(--line);
     }
-    /* FIX: logo stabile (niente clamp) */
+
+    /* Logo stabile (no clamp) */
     .logo{
       height:42px;
       width:auto;
@@ -124,6 +125,7 @@
       font-weight:900;
       color:var(--remax-blue);
     }
+    /* Sub “non ripetitiva” e uguale per tutti */
     .sub{
       margin:12px auto 0;
       max-width:520px;
@@ -217,29 +219,19 @@
     .tile a{color:inherit;text-decoration:none}
     .tile a:hover{text-decoration:underline}
 
-    /* Outline icons (telefono, download, ecc.) */
+    /* Icone: OUTLINE coerenti e sempre leggibili */
     .i{
       width:20px;
       height:20px;
       stroke:currentColor;
       stroke-width:2;
       fill:none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      stroke-linecap:round;
+      stroke-linejoin:round;
       flex:0 0 auto;
       margin-top:2px;
     }
     .i.white{stroke:#fff}
-
-    /* FIX: icone piene (WhatsApp + Email) per evitare problemi stroke */
-    .ifill{
-      width:20px;
-      height:20px;
-      fill:currentColor;
-      flex:0 0 auto;
-      margin-top:2px;
-      display:block;
-    }
 
     /* Social */
     .social-row{
@@ -261,11 +253,9 @@
       border:1px solid rgba(0,0,0,.08);
     }
     .soc svg{width:22px;height:22px;display:block}
-
-    /* default social: fill bianco */
     .soc svg path{fill:#fff}
 
-    /* FIX Instagram: outline stabile (niente conflitti fill/stroke) */
+    /* Instagram outline pulito */
     .soc svg.ig{
       fill:none;
       stroke:#fff;
@@ -354,8 +344,6 @@
 
         <h1>Alexio Marzocchi</h1>
         <div class="role">Team leader – RE/MAX Key House Group · Planimetrio</div>
-
-        <!-- sub uguale e non ripetitiva -->
         <div class="sub">Consulenza e vendita immobiliare</div>
       </div>
 
@@ -369,19 +357,19 @@
         </a>
 
         <a class="btn secondary" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
-          <!-- WhatsApp FIX (fill, non stroke) -->
-          <svg class="ifill" viewBox="0 0 24 24" aria-hidden="true">
+          <!-- WhatsApp OUTLINE (leggibile) -->
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
-            <path d="M9.5 9.5c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.3l.7 1.6c.1.2.1.4 0 .6-.1.2-.2.3-.3.4l-.4.4c-.1.1-.2.3-.1.5.2.6 1 1.8 2.2 2.4.3.2.5.2.7 0l.4-.5c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.3.3.5 0 .8-.4 1.6-1.1 1.9-.6.3-1.4.3-2 .1-1.9-.7-3.4-2.2-4.6-4.1-.7-1.1-1.2-2.4-1.1-3.4 0-.8.5-1.5 1-1.9z"/>
+            <path d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
           </svg>
           WhatsApp
         </a>
 
         <a class="btn" href="mailto:alexio.marzocchi@remax.it?subject=Richiesta%20informazioni">
-          <!-- Email FIX (fill) -->
-          <svg class="ifill" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 6h16v12H4z"/>
-            <path d="M4 7l8 6 8-6"/>
+          <!-- Email OUTLINE (leggibile) -->
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="6" width="16" height="12" rx="2"/>
+            <path d="M4 8l8 6 8-6"/>
           </svg>
           Email
         </a>
@@ -416,9 +404,9 @@
           </div>
 
           <div class="tile">
-            <svg class="ifill" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 6h16v12H4z"/>
-              <path d="M4 7l8 6 8-6"/>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="6" width="16" height="12" rx="2"/>
+              <path d="M4 8l8 6 8-6"/>
             </svg>
             <div>
               <b>Email</b>
@@ -509,7 +497,6 @@
             </svg>
           </a>
 
-          <!-- Instagram FIX: outline stabile -->
           <a class="soc" href="https://www.instagram.com/planimetrio/?utm_source=qr"
              target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Instagram">
             <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
@@ -550,9 +537,9 @@
       </a>
 
       <a class="sbtn" href="https://wa.me/393385784897" target="_blank" rel="noopener noreferrer">
-        <svg class="ifill" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 12a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 12z"/>
-          <path d="M9.5 9.5c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.3l.7 1.6c.1.2.1.4 0 .6-.1.2-.2.3-.3.4l-.4.4c-.1.1-.2.3-.1.5.2.6 1 1.8 2.2 2.4.3.2.5.2.7 0l.4-.5c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.3.3.5 0 .8-.4 1.6-1.1 1.9-.6.3-1.4.3-2 .1-1.9-.7-3.4-2.2-4.6-4.1-.7-1.1-1.2-2.4-1.1-3.4 0-.8.5-1.5 1-1.9z"/>
+          <path d="M9.2 10.3c.3-.6.6-.6.9-.6h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3.1.5 0 .7-.1.2-.2.3-.4.5l-.4.4c-.1.1-.2.3-.1.5.2.7 1.1 2 2.5 2.7.3.2.6.2.8 0l.5-.6c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.6 0 1-.5 1.9-1.4 2.3-.7.3-1.6.3-2.3.1-2.1-.8-3.8-2.5-5.1-4.6-.8-1.2-1.3-2.7-1.2-3.8 0-.9.5-1.7 1.1-2.2z"/>
         </svg>
         <span class="lbl">WhatsApp</span>
       </a>
