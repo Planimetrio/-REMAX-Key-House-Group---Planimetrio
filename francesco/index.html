@@ -491,19 +491,20 @@
             </svg>
           </a>
 
-          <!-- Instagram FIX definitivo -->
-          <a class="soc ig-open"
-             href="https://www.instagram.com/planimetrio/"
-             rel="noopener noreferrer"
-             referrerpolicy="no-referrer"
-             aria-label="Instagram"
-             data-ig="planimetrio">
-            <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle cx="17.5" cy="6.5" r="1"></circle>
-            </svg>
-          </a>
+        <!-- Instagram FIX definitivo (Francesco) -->
+<a class="soc ig-open"
+   href="https://www.instagram.com/planimetrio/"
+   target="_blank"
+   rel="noopener noreferrer"
+   referrerpolicy="no-referrer"
+   aria-label="Instagram"
+   data-ig="planimetrio">
+  <svg class="ig" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+    <circle cx="12" cy="12" r="4"></circle>
+    <circle cx="17.5" cy="6.5" r="1"></circle>
+  </svg>
+</a>
 
           <a class="soc" href="https://www.tiktok.com/@planimetrio"
              target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="TikTok">
@@ -552,41 +553,42 @@
   </div>
 
   <!-- Instagram FIX definitivo: deep link (app) + fallback web -->
-  <script>
-  (function(){
-    var a = document.querySelector('.ig-open');
-    if(!a) return;
+<script>
+(function(){
+  var a = document.querySelector('.ig-open');
+  if(!a) return;
 
-    var user = a.getAttribute('data-ig') || 'planimetrio';
-    var web  = 'https://www.instagram.com/' + user + '/';
+  var user = a.getAttribute('data-ig') || 'planimetrio';
+  var web  = 'https://www.instagram.com/' + user + '/';
 
-    var ua = navigator.userAgent || '';
-    var isAndroid = /Android/i.test(ua);
-    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
 
-    a.addEventListener('click', function(e){
-      e.preventDefault();
+  a.addEventListener('click', function(e){
+    e.preventDefault();
 
-      if(isIOS){
-        var ios = 'instagram://user?username=' + encodeURIComponent(user);
-        var t1 = setTimeout(function(){ window.location.href = web; }, 700);
-        window.location.href = ios;
-        window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
-        return;
-      }
+    // se il browser permette target=_blank lo gestisce già: proviamo comunque deep link
+    if(isIOS){
+      var ios = 'instagram://user?username=' + encodeURIComponent(user);
+      var t1 = setTimeout(function(){ window.location.href = web; }, 700);
+      window.location.href = ios;
+      window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
+      return;
+    }
 
-      if(isAndroid){
-        var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
-          '/#Intent;package=com.instagram.android;scheme=https;end';
-        var t2 = setTimeout(function(){ window.location.href = web; }, 700);
-        window.location.href = intent;
-        window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
-        return;
-      }
+    if(isAndroid){
+      var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
+        '/#Intent;package=com.instagram.android;scheme=https;end';
+      var t2 = setTimeout(function(){ window.location.href = web; }, 700);
+      window.location.href = intent;
+      window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
+      return;
+    }
 
-      window.location.href = web;
-    });
-  })();
-  </script>
+    window.location.href = web;
+  });
+})();
+</script>
 </body>
 </html>
