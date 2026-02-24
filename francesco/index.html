@@ -405,6 +405,24 @@
       .actions{gap:14px}
       .btn{padding:16px 18px; font-size:16px}
     }
+
+    /* ✅ Mini CTA "Apri in Mappe" (nuovo) */
+    .mini-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(0,61,165,.18);
+      background: rgba(0,61,165,.06);
+      color: var(--remax-blue);
+      font-weight:900;
+      font-size:13px;
+      text-decoration:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mini-link:hover{box-shadow:0 12px 24px rgba(11,18,32,.08); transform:translateY(-1px)}
   </style>
 </head>
 
@@ -521,6 +539,8 @@
                 <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
+              <!-- ✅ NUOVO: apre Apple Maps su iOS / app Mappe su Android -->
+              <a class="mini-link map-smart" href="#" data-q="Viale Francesco Caltagirone 436, Roma">Apri in Mappe</a>
             </div>
           </div>
 
@@ -536,6 +556,8 @@
                 <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
+              <!-- ✅ NUOVO -->
+              <a class="mini-link map-smart" href="#" data-q="Via Giovanni Nicotera 31, Roma">Apri in Mappe</a>
             </div>
           </div>
 
@@ -551,6 +573,8 @@
                 <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
               </div>
+              <!-- ✅ NUOVO -->
+              <a class="mini-link map-smart" href="#" data-q="Piazza dei Mirti 27, Roma">Apri in Mappe</a>
             </div>
           </div>
 
@@ -642,6 +666,38 @@
   })();
   </script>
 
+  <!-- ✅ NUOVO: Smart Maps (iOS Apple Maps / Android geo / desktop Google Maps) -->
+  <script>
+  (function(){
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    function openMaps(query){
+      var q = encodeURIComponent(query);
+
+      if(isIOS){
+        window.location.href = "http://maps.apple.com/?q=" + q;
+        return;
+      }
+      if(isAndroid){
+        window.location.href = "geo:0,0?q=" + q;
+        return;
+      }
+      window.open("https://www.google.com/maps/search/?api=1&query=" + q, "_blank", "noopener");
+    }
+
+    document.querySelectorAll(".map-smart").forEach(function(a){
+      a.addEventListener("click", function(e){
+        e.preventDefault();
+        var q = a.getAttribute("data-q") || "";
+        if(!q) return;
+        openMaps(q);
+      });
+    });
+  })();
+  </script>
+
   <!-- Instagram: deep link + fallback (desktop: non blocco il click) -->
   <script>
   (function(){
@@ -660,14 +716,12 @@
 
     a.href = web;
 
-    // Desktop / non mobile: lascio comportamento normale (niente preventDefault)
     if(!isIOS && !isAndroid) return;
 
     a.addEventListener('click', function(e){
       e.preventDefault();
 
       function openWeb(){
-        // fallback web rispettando _blank
         if (a.target === '_blank') {
           window.open(web, '_blank', 'noopener');
         } else {
@@ -675,25 +729,20 @@
         }
       }
 
-      // iOS: schema instagram://
       if(isIOS){
         var ios = 'instagram://user?username=' + encodeURIComponent(user);
         var t1 = setTimeout(openWeb, 900);
         window.location.href = ios;
-
-        // se la pagina cambia o app si apre, stoppo il fallback
         window.addEventListener('pagehide', function(){ clearTimeout(t1); }, { once:true });
         window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
         return;
       }
 
-      // Android: intent
       if(isAndroid){
         var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
           '/#Intent;package=com.instagram.android;scheme=https;end';
         var t2 = setTimeout(openWeb, 900);
         window.location.href = intent;
-
         window.addEventListener('pagehide', function(){ clearTimeout(t2); }, { once:true });
         window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
         return;
