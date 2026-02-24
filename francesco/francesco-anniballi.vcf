@@ -1,0 +1,40 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Anniballi;Francesco;;;
+FN:Francesco Anniballi
+ORG:RE/MAX Key House Group
+TITLE:Consulente Immobiliare
+TEL;TYPE=CELL,VOICE:+393292628540
+EMAIL;TYPE=WORK:francesco.anniballi@remax.it
+URL;TYPE=WORK:https://keyhousegroup.it
+
+ADR;TYPE=WORK:;;Viale Francesco Caltagirone 436;Roma;;00132;Italia
+ADR;TYPE=WORK:;;Via Giovanni Nicotera 31;Roma;;00195;Italia
+ADR;TYPE=WORK:;;Piazza dei Mirti 27;Roma;;00172;Italia
+
+item1.URL:https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma
+item1.X-ABLabel:Maps Caltagirone 436
+
+item2.URL:https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma
+item2.X-ABLabel:Maps Nicotera 31
+
+item3.URL:https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma
+item3.X-ABLabel:Maps Mirti 27
+
+item4.URL:https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/
+item4.X-ABLabel:Pagina
+
+item5.URL:https://www.instagram.com/planimetrio/
+item5.X-ABLabel:Instagram
+
+item6.URL:https://www.facebook.com/share/1CD4kNnesM/
+item6.X-ABLabel:Facebook
+
+item7.URL:https://www.tiktok.com/@planimetrio
+item7.X-ABLabel:TikTok
+
+item8.URL:https://www.linkedin.com/in/francesco-anniballi-741706216/
+item8.X-ABLabel:LinkedIn
+
+NOTE:Sedi a Roma. Usa i campi Maps o gli indirizzi per aprire la navigazione.
+END:VCARD
