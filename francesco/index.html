@@ -8,6 +8,17 @@
   <meta name="description" content="Biglietto da visita digitale - Francesco Anniballi, RE/MAX Key House Group · Team Planimetrio" />
   <link rel="canonical" href="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/" />
 
+  <!-- Icons / PWA -->
+  <link rel="icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <!-- Performance: preload above-the-fold images -->
+  <link rel="preload" as="image" href="./francesco-anniballi.jpeg">
+  <link rel="preload" as="image" href="./remax-logo.jpg">
+  <!-- (facoltativo) se hero-bg è leggero -->
+  <link rel="preload" as="image" href="./hero-bg.jpg">
+
   <!-- Social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
@@ -17,6 +28,7 @@
   <meta property="og:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Francesco Anniballi - RE/MAX Key House Group" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Francesco Anniballi | RE/MAX" />
@@ -24,6 +36,16 @@
   <meta name="twitter:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/og.jpg" />
 
   <meta name="theme-color" content="#003DA5" />
+
+  <!-- Security: CSP base (consente inline CSS/JS perché li usi qui) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline';
+                 script-src 'self' 'unsafe-inline';
+                 connect-src 'self';
+                 base-uri 'self';
+                 frame-ancestors 'none'">
 
   <style>
     :root{
@@ -98,6 +120,14 @@
     }
     .hero > *{position:relative; z-index:1;}
 
+    /* Performance: su schermi piccoli tolgo l’immagine di sfondo (riduce peso) */
+    @media (max-width:420px){
+      .hero::before{
+        background: linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92));
+        filter:none;
+      }
+    }
+
     .avatar{
       width:164px;height:164px;border-radius:999px;
       margin:8px auto 14px;
@@ -116,7 +146,6 @@
       line-height:1.12;
     }
 
-    /* ✅ ruolo premium in badge */
     .role{
       margin:10px 0 0;
       display:flex;
@@ -179,6 +208,7 @@
       overflow:hidden;
       text-overflow:ellipsis;
       cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
     }
     .btn:hover{box-shadow:var(--shadow2); transform:translateY(-1px); border-color: rgba(0,61,165,.18)}
     .btn:active{transform:translateY(0px); box-shadow:0 8px 18px rgba(11,18,32,.10)}
@@ -281,6 +311,7 @@
       box-shadow:0 10px 22px rgba(0,0,0,.12);
       border:1px solid rgba(0,0,0,.08);
       transition: transform .08s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
     .soc:hover{transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,.18);}
     .soc svg{width:22px;height:22px;display:block;}
@@ -337,6 +368,7 @@
       text-overflow:ellipsis;
       font-size:14px;
       transition: transform .08s ease, box-shadow .18s ease, border-color .18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
     .sbtn:hover{
       box-shadow: var(--shadow2);
@@ -381,14 +413,13 @@
     <div class="card">
 
       <div class="logo-wrap">
-        <img class="logo" src="./remax-logo.jpg" alt="RE/MAX">
+        <img class="logo" src="./remax-logo.jpg" alt="RE/MAX" loading="eager" decoding="async">
       </div>
 
       <div class="hero">
         <img class="avatar" src="./francesco-anniballi.jpeg" alt="Foto profilo Francesco Anniballi" loading="eager" decoding="async" width="164" height="164">
         <h1>Francesco Anniballi</h1>
 
-        <!-- ✅ Team leader rimosso + badge premium -->
         <div class="role" aria-label="Ruolo e team">
           <span class="badge">RE/MAX Key House Group</span>
           <span class="badge alt">Team Planimetrio</span>
@@ -422,7 +453,7 @@
           Email
         </a>
 
-        <a class="btn" href="./francesco-anniballi.vcf" download>
+        <a class="btn" href="./francesco-anniballi.vcf">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12"/>
             <path d="M7 10l5 5 5-5"/>
@@ -430,8 +461,6 @@
           </svg>
           Salva contatto
         </a>
-
-        <!-- ✅ link "se non scarica" RIMOSSO come richiesto -->
       </div>
 
       <div class="section">
@@ -444,7 +473,7 @@
             </svg>
             <div>
               <b>Cellulare</b>
-              <div class="small"><a href="tel:+393292628540">+39 329 262 8540</a></div>
+              <div class="small" aria-label="Numero di telefono"><a href="tel:+393292628540">+39 329 262 8540</a></div>
             </div>
           </div>
 
@@ -455,7 +484,7 @@
             </svg>
             <div>
               <b>Email</b>
-              <div class="small"><a href="mailto:francesco.anniballi@remax.it?subject=Richiesta%20informazioni">francesco.anniballi@remax.it</a></div>
+              <div class="small" aria-label="Indirizzo email"><a href="mailto:francesco.anniballi@remax.it?subject=Richiesta%20informazioni">francesco.anniballi@remax.it</a></div>
             </div>
           </div>
 
@@ -487,7 +516,7 @@
             </svg>
             <div>
               <b>Viale Francesco Caltagirone 436</b>
-              <div class="small">00132 · Roma</div>
+              <div class="small" aria-label="CAP e città">00132 · Roma</div>
               <div class="small">
                 <a href="https://www.google.com/maps/search/?api=1&query=Viale+Francesco+Caltagirone+436+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
@@ -502,7 +531,7 @@
             </svg>
             <div>
               <b>Via Giovanni Nicotera 31</b>
-              <div class="small">00195 · Roma</div>
+              <div class="small" aria-label="CAP e città">00195 · Roma</div>
               <div class="small">
                 <a href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+Nicotera+31+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
@@ -517,7 +546,7 @@
             </svg>
             <div>
               <b>Piazza dei Mirti 27</b>
-              <div class="small">00172 · Roma</div>
+              <div class="small" aria-label="CAP e città">00172 · Roma</div>
               <div class="small">
                 <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Mirti+27+Roma"
                    target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Apri su Google Maps</a>
@@ -590,7 +619,7 @@
         <span class="lbl">WhatsApp</span>
       </a>
 
-      <a class="sbtn" href="./francesco-anniballi.vcf" download aria-label="Scarica contatto">
+      <a class="sbtn" href="./francesco-anniballi.vcf" aria-label="Scarica contatto">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12"/>
           <path d="M7 10l5 5 5-5"/>
@@ -601,7 +630,7 @@
     </div>
   </div>
 
-  <!-- ✅ iOS: migliora import contatto (apre invece di tentare download) -->
+  <!-- iOS: migliora import contatto (apre invece di tentare download) -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
@@ -613,7 +642,7 @@
   })();
   </script>
 
-  <!-- ✅ Instagram: deep link + fallback + rispetto _blank + hardening username -->
+  <!-- Instagram: deep link + fallback (desktop: non blocco il click) -->
   <script>
   (function(){
     var a = document.querySelector('.ig-open');
@@ -631,10 +660,14 @@
 
     a.href = web;
 
+    // Desktop / non mobile: lascio comportamento normale (niente preventDefault)
+    if(!isIOS && !isAndroid) return;
+
     a.addEventListener('click', function(e){
       e.preventDefault();
 
       function openWeb(){
+        // fallback web rispettando _blank
         if (a.target === '_blank') {
           window.open(web, '_blank', 'noopener');
         } else {
@@ -642,20 +675,25 @@
         }
       }
 
+      // iOS: schema instagram://
       if(isIOS){
         var ios = 'instagram://user?username=' + encodeURIComponent(user);
         var t1 = setTimeout(openWeb, 900);
         window.location.href = ios;
+
+        // se la pagina cambia o app si apre, stoppo il fallback
         window.addEventListener('pagehide', function(){ clearTimeout(t1); }, { once:true });
         window.addEventListener('blur', function(){ clearTimeout(t1); }, { once:true });
         return;
       }
 
+      // Android: intent
       if(isAndroid){
         var intent = 'intent://www.instagram.com/' + encodeURIComponent(user) +
           '/#Intent;package=com.instagram.android;scheme=https;end';
         var t2 = setTimeout(openWeb, 900);
         window.location.href = intent;
+
         window.addEventListener('pagehide', function(){ clearTimeout(t2); }, { once:true });
         window.addEventListener('blur', function(){ clearTimeout(t2); }, { once:true });
         return;
