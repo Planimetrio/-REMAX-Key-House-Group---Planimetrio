@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:title" content="Francesco Anniballi | RE/MAX" />
-  <meta property="og:description" content="RE/MAX Key House Group · Team Planimetrio" />
+  <meta property="og:description" content="Team leader – RE/MAX Key House Group · Team Planimetrio" />
   <meta property="og:url" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/" />
   <meta property="og:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/og.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Francesco Anniballi | RE/MAX" />
-  <meta name="twitter:description" content="RE/MAX Key House Group · Team Planimetrio" />
+  <meta name="twitter:description" content="Team leader – RE/MAX Key House Group · Team Planimetrio" />
   <meta name="twitter:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/francesco/og.jpg" />
 
   <meta name="theme-color" content="#003DA5" />
@@ -73,9 +73,10 @@
       background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1));
       border-bottom:1px solid var(--line);
     }
-    /* ✅ logo più leggibile su desktop, resta ok su mobile */
+
+    /* ✅ Logo più leggibile su desktop */
     .logo{
-      height: clamp(44px, 6vw, 70px);
+      height: clamp(44px, 6vw, 72px);
       width:auto;
       display:block;
     }
@@ -162,7 +163,7 @@
     .btn:hover{box-shadow:var(--shadow2); transform:translateY(-1px); border-color: rgba(0,61,165,.18)}
     .btn:active{transform:translateY(0px); box-shadow:0 8px 18px rgba(11,18,32,.10)}
 
-    /* ✅ FIX: focus pulito */
+    /* ✅ focus pulito */
     .btn:focus{outline:none}
     .btn:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
 
@@ -235,7 +236,7 @@
     .btn.primary .i,
     .sbtn.primary .i{ stroke:#fff; }
 
-    /* WhatsApp FILLED (stabile su tutti i device) */
+    /* WhatsApp FILLED */
     .wa-fill{
       width:20px;
       height:20px;
@@ -273,7 +274,6 @@
     .soc svg{width:22px;height:22px;display:block;}
     .soc svg path{ fill:#fff; }
 
-    /* ✅ FIX: focus social pulito */
     .soc:focus{outline:none}
     .soc:focus-visible{outline:3px solid var(--focus); outline-offset:3px}
 
@@ -341,7 +341,6 @@
       box-shadow:0 14px 26px rgba(220,28,46,.22);
     }
 
-    /* ✅ FIX: focus sticky pulito */
     .sbtn:focus{outline:none}
     .sbtn:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
 
@@ -361,12 +360,31 @@
       .grid{grid-template-columns:1fr 1fr}
     }
 
-    /* ✅ Desktop breathing (solo desktop) */
+    /* ✅ Desktop breathing */
     @media (min-width:980px){
       .wrap{max-width:760px}
       .actions{gap:14px}
       .btn{padding:16px 18px; font-size:16px}
     }
+
+    /* Valutazione (mini form) */
+    .lead{
+      display:grid;
+      gap:10px;
+    }
+    .field{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      font: inherit;
+      color: var(--text);
+      background:#fff;
+      outline:none;
+    }
+    .field:focus{outline:none}
+    .field:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
+    .hint{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.35}
   </style>
 </head>
 
@@ -381,7 +399,7 @@
       <div class="hero">
         <img class="avatar" src="./francesco-anniballi.jpeg" alt="Foto profilo Francesco Anniballi" loading="eager" decoding="async" width="164" height="164">
         <h1>Francesco Anniballi</h1>
-        <div class="role"> RE/MAX Key House Group · Team Planimetrio</div>
+        <div class="role">Team leader – RE/MAX Key House Group · Team Planimetrio</div>
         <div class="sub">Valutazioni accurate · Strategia di vendita · Supporto fino al rogito.</div>
       </div>
 
@@ -393,7 +411,6 @@
           Chiama
         </a>
 
-        <!-- ✅ FIX: WhatsApp con testo + target blank -->
         <a class="btn secondary"
            href="https://wa.me/393292628540?text=Ciao%20Francesco%2C%20ho%20visto%20il%20tuo%20biglietto%20digitale%20e%20vorrei%20informazioni."
            target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="WhatsApp">
@@ -420,8 +437,28 @@
           Salva contatto
         </a>
 
+        <!-- ✅ Share sheet (se non supportato sparisce da solo) -->
+        <button class="btn" type="button" id="shareCard" aria-label="Condividi biglietto">
+          Condividi biglietto
+        </button>
+
         <div class="small" style="text-align:center;margin-top:-2px">
           <a href="./francesco-anniballi.vcf">Se non scarica, tocca qui per aprire il contatto</a>
+        </div>
+      </div>
+
+      <!-- ✅ Lead magnet: valutazione -->
+      <div class="section">
+        <h2>Valutazione gratuita</h2>
+        <div class="lead">
+          <input class="field" id="zona" type="text" inputmode="text" autocomplete="address-level2" placeholder="Zona / Quartiere (es. Centocelle)" aria-label="Zona o quartiere">
+          <input class="field" id="mq" type="text" inputmode="numeric" autocomplete="off" placeholder="Metri quadri (es. 85)" aria-label="Metri quadri">
+          <input class="field" id="tipo" type="text" inputmode="text" autocomplete="off" placeholder="Tipologia (es. trilocale, villa, locale commerciale)" aria-label="Tipologia immobile">
+          <div class="hint">Compila 3 campi e invia: si apre WhatsApp con il messaggio già pronto.</div>
+
+          <button class="btn primary" type="button" id="sendValuation" aria-label="Invia richiesta valutazione">
+            Richiedi valutazione su WhatsApp
+          </button>
         </div>
       </div>
 
@@ -530,7 +567,6 @@
             </svg>
           </a>
 
-          <!-- Instagram FIX definitivo (Francesco) -->
           <a class="soc ig-open"
              href="https://www.instagram.com/planimetrio/"
              target="_blank"
@@ -566,7 +602,7 @@
 
   <div class="sticky" aria-label="Azioni rapide">
     <div class="inner">
-      <a class="sbtn primary" href="tel:+393292628540">
+      <a class="sbtn primary" href="tel:+393292628540" aria-label="Chiama">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
@@ -582,7 +618,7 @@
         <span class="lbl">WhatsApp</span>
       </a>
 
-      <a class="sbtn" href="./francesco-anniballi.vcf" download>
+      <a class="sbtn" href="./francesco-anniballi.vcf" download aria-label="Scarica contatto">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12"/>
           <path d="M7 10l5 5 5-5"/>
@@ -605,7 +641,64 @@
   })();
   </script>
 
-  <!-- ✅ Instagram: deep link (app) + fallback web + rispetto _blank + hardening username -->
+  <!-- ✅ Share sheet (se non supportato, nasconde bottone) -->
+  <script>
+  (function(){
+    var b = document.getElementById('shareCard');
+    if(!b) return;
+    if(!navigator.share){
+      b.style.display = 'none';
+      return;
+    }
+    b.addEventListener('click', async function(){
+      try{
+        await navigator.share({
+          title: document.title,
+          text: 'Contatti e info',
+          url: window.location.href
+        });
+      }catch(e){}
+    });
+  })();
+  </script>
+
+  <!-- ✅ Lead magnet: genera WhatsApp con messaggio completo -->
+  <script>
+  (function(){
+    var PHONE = '393292628540'; // cambia qui per altri agenti (formato internazionale senza +)
+
+    var btn = document.getElementById('sendValuation');
+    if(!btn) return;
+
+    function v(id){
+      var el = document.getElementById(id);
+      return (el && el.value ? el.value.trim() : '');
+    }
+
+    btn.addEventListener('click', function(){
+      var zona = v('zona');
+      var mq   = v('mq');
+      var tipo = v('tipo');
+
+      var lines = [
+        'Ciao Francesco, vorrei una valutazione gratuita.',
+        '',
+        'Zona: ' + (zona || '-'),
+        'Mq: '   + (mq   || '-'),
+        'Tipo: ' + (tipo || '-'),
+        '',
+        'Grazie!'
+      ];
+
+      var text = encodeURIComponent(lines.join('\n'));
+      var url = 'https://wa.me/' + PHONE + '?text=' + text;
+
+      window.open(url, '_blank', 'noopener');
+    });
+  })();
+  </script>
+
+  <!-- ✅ Instagram: deep link + fallback + rispetto _blank + hardening username -->
   <script>
   (function(){
     var a = document.querySelector('.ig-open');
