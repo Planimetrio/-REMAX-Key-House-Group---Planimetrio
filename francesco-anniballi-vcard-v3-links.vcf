@@ -1,0 +1,24 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:Anniballi;Francesco;;;
+FN;CHARSET=UTF-8:Francesco Anniballi
+ORG;CHARSET=UTF-8:RE/MAX Key House Group
+TEL;TYPE=CELL:+39 329 2628540
+EMAIL;TYPE=INTERNET:francesco.anniballi@remax.it
+item1.URL:https://keyhousegroup.it
+item1.X-ABLabel;CHARSET=UTF-8:Sito
+item2.URL:https://maps.google.com/?q=Viale+Francesco+Caltagirone+436,+Roma
+item2.X-ABLabel;CHARSET=UTF-8:Ufficio Caltagirone
+item3.URL:https://maps.google.com/?q=Via+Giovanni+Nicotera+31,+Roma
+item3.X-ABLabel;CHARSET=UTF-8:Ufficio Nicotera
+item4.URL:https://maps.google.com/?q=Piazza+dei+Mirti+27,+Roma
+item4.X-ABLabel;CHARSET=UTF-8:Ufficio Mirti
+item5.URL:https://www.instagram.com/planimetrio/
+item5.X-ABLabel;CHARSET=UTF-8:Instagram
+item6.URL:https://www.facebook.com/share/1CD4kNnesM/
+item6.X-ABLabel;CHARSET=UTF-8:Facebook
+item7.URL:https://www.tiktok.com/@planimetrio
+item7.X-ABLabel;CHARSET=UTF-8:TikTok
+item8.URL:https://www.linkedin.com/in/francesco-anniballi-741706216/
+item8.X-ABLabel;CHARSET=UTF-8:LinkedIn
+END:VCARD
