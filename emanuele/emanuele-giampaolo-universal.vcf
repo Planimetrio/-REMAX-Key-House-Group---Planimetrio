@@ -1,0 +1,30 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:Giampaolo;Emanuele;;;
+FN;CHARSET=UTF-8:Emanuele Giampaolo
+ORG;CHARSET=UTF-8:RE/MAX Key House Group;Team Planimetrio
+TITLE;CHARSET=UTF-8:Team Member
+TEL;TYPE=CELL:+393925513429
+EMAIL;TYPE=INTERNET,PREF:emanuele.giampaolo@remax.it
+URL:https://keyhousegroup.it
+item1.URL:https://keyhousegroup.it
+item1.X-ABLabel:Sito web
+URL:https://maps.google.com/?q=Viale+Francesco+Caltagirone+436+Roma
+item2.URL:https://maps.google.com/?q=Viale+Francesco+Caltagirone+436+Roma
+item2.X-ABLabel:Ufficio Caltagirone
+URL:https://maps.google.com/?q=Via+Giovanni+Nicotera+31+Roma
+item3.URL:https://maps.google.com/?q=Via+Giovanni+Nicotera+31+Roma
+item3.X-ABLabel:Ufficio Nicotera
+URL:https://maps.google.com/?q=Piazza+dei+Mirti+27+Roma
+item4.URL:https://maps.google.com/?q=Piazza+dei+Mirti+27+Roma
+item4.X-ABLabel:Ufficio Mirti
+URL:https://instagram.com/planimetrio
+item5.URL:https://instagram.com/planimetrio
+item5.X-ABLabel:Instagram
+URL:https://www.facebook.com/share/1CD4kNnesM/
+item6.URL:https://www.facebook.com/share/1CD4kNnesM/
+item6.X-ABLabel:Facebook
+URL:https://tiktok.com/@planimetrio
+item7.URL:https://tiktok.com/@planimetrio
+item7.X-ABLabel:TikTok
+END:VCARD
