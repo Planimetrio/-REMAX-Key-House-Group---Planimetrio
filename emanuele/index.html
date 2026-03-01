@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="it">
 <head>
   <meta charset="utf-8" />
@@ -464,8 +464,8 @@
           Email
         </a>
 
-        <!-- ✅ FIX vCard: uso il file universale pulito -->
-        <a class="btn" href="./emanuele-giampaolo-universal-clean.vcf" type="text/vcard" download="emanuele-giampaolo-universal-clean.vcf">
+        <!-- ✅ VCF DEFINITIVO -->
+        <a class="btn" href="./emanuele-giampaolo-definitivo.vcf" type="text/vcard" download="emanuele-giampaolo-definitivo.vcf">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12"/>
             <path d="M7 10l5 5 5-5"/>
@@ -481,7 +481,7 @@
 
           <div class="tile">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             <div>
               <b>Cellulare</b>
@@ -634,8 +634,8 @@
         <span class="lbl">WhatsApp</span>
       </a>
 
-      <!-- ✅ FIX vCard anche qui: file universale pulito -->
-      <a class="sbtn" href="./emanuele-giampaolo-universal-clean.vcf" type="text/vcard" download="emanuele-giampaolo-universal-clean.vcf" aria-label="Scarica contatto">
+      <!-- ✅ VCF DEFINITIVO -->
+      <a class="sbtn" href="./emanuele-giampaolo-definitivo.vcf" type="text/vcard" download="emanuele-giampaolo-definitivo.vcf" aria-label="Scarica contatto">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12"/>
           <path d="M7 10l5 5 5-5"/>
@@ -646,20 +646,20 @@
     </div>
   </div>
 
-  <!-- ✅ iOS: rimuovo download SOLO dal file vCard aggiornato (come Francesco) -->
+  <!-- ✅ iOS: rimuovo download SOLO dal file vCard definitivo -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
     var isIOS = /iPhone|iPad|iPod/i.test(ua);
     if(!isIOS) return;
 
-    document.querySelectorAll('a[href$="emanuele-giampaolo-universal-clean.vcf"]').forEach(function(el){
+    document.querySelectorAll('a[href$="emanuele-giampaolo-definitivo.vcf"]').forEach(function(el){
       el.removeAttribute('download');
     });
   })();
   </script>
 
-  <!-- Smart Maps -->
+  <!-- ✅ Smart Maps -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
