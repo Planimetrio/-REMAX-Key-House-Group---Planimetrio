@@ -428,7 +428,8 @@
       </div>
 
       <div class="hero">
-        <img class="avatar" src="./Alexio Marzocchi.png" alt="Foto profilo Alexio Marzocchi" loading="eager" decoding="async" width="164" height="164">
+        <!-- ✅ FIX: uso lo stesso path del preload (con %20) -->
+        <img class="avatar" src="./Alexio%20Marzocchi.png" alt="Foto profilo Alexio Marzocchi" loading="eager" decoding="async" width="164" height="164">
         <h1>Alexio Marzocchi</h1>
 
         <div class="role" aria-label="Brand e team">
@@ -464,8 +465,8 @@
           Email
         </a>
 
-        <!-- vCard: metti in cartella alexio-marzocchi.vcf (puoi rinominare il file universal-fix) -->
-        <a class="btn" href="./alexio-marzocchi.vcf" type="text/vcard" download="alexio-marzocchi.vcf">
+        <!-- ✅ FIX vCard: uso il file universale pulito -->
+        <a class="btn" href="./alexio-marzocchi-universal-clean.vcf" type="text/vcard" download="alexio-marzocchi-universal-clean.vcf">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12"/>
             <path d="M7 10l5 5 5-5"/>
@@ -634,7 +635,8 @@
         <span class="lbl">WhatsApp</span>
       </a>
 
-      <a class="sbtn" href="./alexio-marzocchi.vcf" type="text/vcard" download="alexio-marzocchi.vcf" aria-label="Scarica contatto">
+      <!-- ✅ FIX vCard anche qui -->
+      <a class="sbtn" href="./alexio-marzocchi-universal-clean.vcf" type="text/vcard" download="alexio-marzocchi-universal-clean.vcf" aria-label="Scarica contatto">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12"/>
           <path d="M7 10l5 5 5-5"/>
@@ -645,13 +647,14 @@
     </div>
   </div>
 
-  <!-- iOS: rimuovo download su .vcf -->
+  <!-- ✅ iOS: rimuovo download SOLO dal file vCard aggiornato (come Francesco) -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
     var isIOS = /iPhone|iPad|iPod/i.test(ua);
     if(!isIOS) return;
-    document.querySelectorAll('a[href$=".vcf"]').forEach(function(el){
+
+    document.querySelectorAll('a[href$="alexio-marzocchi-universal-clean.vcf"]').forEach(function(el){
       el.removeAttribute('download');
     });
   })();
