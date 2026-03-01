@@ -22,6 +22,7 @@
   <meta property="og:image" content="https://planimetrio.github.io/-REMAX-Key-House-Group---Planimetrio/gianluca/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gianluca Mandras - RE/MAX Key House Group" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gianluca Mandras | RE/MAX" />
@@ -30,7 +31,7 @@
 
   <meta name="theme-color" content="#003DA5" />
 
-  <!-- Security: CSP base -->
+  <!-- CSP -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self';
                  img-src 'self' https: data:;
@@ -393,7 +394,12 @@
       .grid{grid-template-columns:1fr 1fr}
     }
 
-    /* Mini CTA "Apri in Mappe" */
+    @media (min-width:980px){
+      .wrap{max-width:760px}
+      .actions{gap:14px}
+      .btn{padding:16px 18px; font-size:16px}
+    }
+
     .mini-link{
       display:inline-flex;
       align-items:center;
@@ -458,8 +464,8 @@
           Email
         </a>
 
-        <!-- ✅ FIX vCard: file universale pulito -->
-        <a class="btn" href="./gianluca-mandras-universal-clean.vcf" type="text/vcard" download="gianluca-mandras-universal-clean.vcf">
+        <!-- ✅ VCF DEFINITIVO -->
+        <a class="btn" href="./gianluca-mandras-definitivo.vcf" type="text/vcard" download="gianluca-mandras-definitivo.vcf">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12"/>
             <path d="M7 10l5 5 5-5"/>
@@ -626,8 +632,8 @@
         <span class="lbl">WhatsApp</span>
       </a>
 
-      <!-- ✅ FIX vCard anche qui -->
-      <a class="sbtn" href="./gianluca-mandras-universal-clean.vcf" type="text/vcard" download="gianluca-mandras-universal-clean.vcf" aria-label="Scarica contatto">
+      <!-- ✅ VCF DEFINITIVO -->
+      <a class="sbtn" href="./gianluca-mandras-definitivo.vcf" type="text/vcard" download="gianluca-mandras-definitivo.vcf" aria-label="Scarica contatto">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12"/>
           <path d="M7 10l5 5 5-5"/>
@@ -638,20 +644,20 @@
     </div>
   </div>
 
-  <!-- ✅ iOS: rimuovo download SOLO dal file vCard aggiornato -->
+  <!-- ✅ iOS: rimuovo download SOLO dal file vCard definitivo -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
     var isIOS = /iPhone|iPad|iPod/i.test(ua);
     if(!isIOS) return;
 
-    document.querySelectorAll('a[href$="gianluca-mandras-universal-clean.vcf"]').forEach(function(el){
+    document.querySelectorAll('a[href$="gianluca-mandras-definitivo.vcf"]').forEach(function(el){
       el.removeAttribute('download');
     });
   })();
   </script>
 
-  <!-- ✅ Smart Maps (iOS Apple Maps HTTPS / Android geo + fallback / desktop Google Maps) -->
+  <!-- ✅ Smart Maps -->
   <script>
   (function(){
     var ua = navigator.userAgent || '';
@@ -695,7 +701,7 @@
   })();
   </script>
 
-  <!-- Instagram: deep link + fallback (mobile) -->
+  <!-- Instagram: deep link + fallback -->
   <script>
   (function(){
     var a = document.querySelector('.ig-open');
